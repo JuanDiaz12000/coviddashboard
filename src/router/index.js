@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-//import Covid from '../views/Covid.vue'
+import Covid from '../views/Covid'
+import CovidSearch from '../views/CovidSearch'
 import Covid2 from '../views/Covid2.vue'
 
 Vue.use(VueRouter)
@@ -12,11 +13,16 @@ const routes = [
     name: 'Home',
     component: Home
   },
-/*  {
+  {
+    path: '/covid/search',
+    name: 'CovidSearch',
+    component: CovidSearch
+  },
+  {
     path: '/covid',
     name: 'Covid',
     component: Covid
-  },*/
+  },
   {
     path: '/covicho',
     name: 'Covid2',
