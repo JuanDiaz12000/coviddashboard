@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Covid from '../views/Covid.vue'
+//import Covid from '../views/Covid.vue'
+import Covid2 from '../views/Covid2.vue'
 
 Vue.use(VueRouter)
 
@@ -11,10 +12,15 @@ const routes = [
     name: 'Home',
     component: Home
   },
-  {
+/*  {
     path: '/covid',
     name: 'Covid',
     component: Covid
+  },*/
+  {
+    path: '/covicho',
+    name: 'Covid2',
+    component: Covid2
   },
   {
     path: '/about',
