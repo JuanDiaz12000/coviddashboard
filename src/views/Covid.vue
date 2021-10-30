@@ -222,7 +222,7 @@ popup.remove();
 }
 .mapboxgl-popup{
     padding-bottom: 15px;
-    color:black;
+    color:#393E46;
     max-width: 400px;
     text-align: center;
     font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
