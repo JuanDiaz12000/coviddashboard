@@ -27,7 +27,7 @@ export default {
       let conts = [];
       let num = [];
       await this.axios
-        .get(`https://git.heroku.com/backsemanatec.git/covidlogs/list/searches`)
+        .get(`https://backsemanatec.herokuapp.com/covidlogs/list/searches`)
         .then((response) => {
           console.log(response.data);
           const countries = response.data;
