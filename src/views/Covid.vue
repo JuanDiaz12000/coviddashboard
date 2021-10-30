@@ -118,6 +118,8 @@ export default {
           { hover: false }
         );
       }
+      popup.remove();
+      map.getCanvas().style.cursor = "deafult";
       hoveredStateId = null;
     });
     const popup = new mapboxgl.Popup({
@@ -144,11 +146,6 @@ export default {
         )
         .addTo(map);
       popup.update();
-    });
-    map.on("mouseleave", "state-fills", () => {
-      map.getCanvas().style.cursor = "";
-      popup.update();
-      popup.remove();
     });
     this.cargarDatos();
   },
