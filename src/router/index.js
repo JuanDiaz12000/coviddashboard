@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Covid from '../views/Covid'
 import CovidSearch from '../views/CovidSearch'
-import Covid2 from '../views/Covid2.vue'
 import Country from '../views/CountryInfo.vue'
 
 Vue.use(VueRouter)
@@ -28,11 +27,6 @@ const routes = [
     path: '/covid/:code',
     name: 'Country',
     component: Country
-  },
-  {
-    path: '/covicho',
-    name: 'Covid2',
-    component: Covid2
   },
   {
     path: '/about',
