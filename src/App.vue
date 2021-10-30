@@ -54,6 +54,9 @@
 
 export default {
   name: 'App',
+  components: {
+    
+  },
 
   data: () => ({
     hover1: false,
