@@ -92,7 +92,7 @@ export default {
         }
         this.data = true
          await this.axios
-        .post("http://localhost:8080/https://git.heroku.com/backsemanatec.git/covidlogs/add_log/", cntry)
+        .post("https://git.heroku.com/backsemanatec.git/covidlogs/add_log/", cntry)
         console.log("Log saved")
       } else {
         this.estados = states
