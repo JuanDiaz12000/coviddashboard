@@ -58,8 +58,8 @@ export default {
     const map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/mapbox/navigation-night-v1",
-      center: [-100.562938, 38.4816921],
-      zoom: 4,
+      center: [-100.486052, 37.830348],
+      zoom: 3.5,
     });
     map.on('load', () => {
     map.addSource('states', {
