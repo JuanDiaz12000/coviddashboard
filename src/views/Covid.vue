@@ -191,13 +191,13 @@ export default {
       if (country != null) {
         this.estados = [country];
         let cntry = {
-          name: country.name,
+          country: country.name,
           pos: country.latest_data.confirmed,
           death: country.latest_data.deaths,
         };
         this.data = true;
         await this.axios.post(
-          "https://backsemanatec.herokuapp.com/covidlogs/add_log/",
+          "https://backsemanatec.herokuapp.com/covidlogs/add_log",
           cntry
         );
         console.log("Log saved");
