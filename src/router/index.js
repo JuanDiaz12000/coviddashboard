@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+//import Home from '../views/Home.vue'
 import Covid from '../views/Covid'
 import CovidSearch from '../views/CovidSearch'
 import Country from '../views/CountryInfo.vue'
@@ -10,18 +10,13 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Covid',
+    component: Covid
   },
   {
     path: '/covid/search',
     name: 'CovidSearch',
     component: CovidSearch
-  },
-  {
-    path: '/covid',
-    name: 'Covid',
-    component: Covid
   },
   {
     path: '/covid/:code',

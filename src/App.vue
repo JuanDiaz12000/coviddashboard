@@ -33,7 +33,7 @@
           elevation="2"
           color="secondary"
           style="margin-left: 10px; margin-right: 10px"
-          href="#/covid"
+          href="#/"
         >US Map & WorldWideTable</v-btn>
         <v-btn
           elevation="2"
