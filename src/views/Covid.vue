@@ -222,11 +222,30 @@ popup.remove();
 }
 .mapboxgl-popup{
     padding-bottom: 15px;
-    color:#393E46;
+    color:#fafafa;
     max-width: 400px;
     text-align: center;
     font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
+.mapboxgl-popup-content {
+  background-color: #393E46;
+}
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+    border-bottom-color: #393E46;;
+    }
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+    border-top-color: #393E46;;
+    }
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+    border-right-color: #393E46;;
+    }
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+    border-left-color: #393E46;;
+    }
 .text-container {
   max-width: 500px;
   display: flex;
