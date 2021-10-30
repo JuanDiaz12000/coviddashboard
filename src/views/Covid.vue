@@ -2,6 +2,7 @@
 <v-container>
   <h1 style="margin: 10px"> Covid Tracker </h1>
   <p> To search the information of a country please write the name and press enter </p>
+  <p> To see more information of a country, click on the country </p>
   <v-card>
     <v-card-title>
       <v-text-field
@@ -15,8 +16,19 @@
     <v-data-table
       :headers="headers"
       :items="estados"
+      item-key="country"
       v-if= "data"
-    ></v-data-table>
+      style="margin-bottom:20px"
+      v-model="selectedRow"
+    >
+      <template v-slot:item="{ item }">
+          <tr :class="selectedRow.indexOf(item.country)" @click="rowClicked(item)">
+            <td>{{item.name}}</td>
+            <td>{{item.latest_data.confirmed}}</td>
+            <td>{{item.latest_data.deaths}}</td>
+          </tr>
+      </template>
+    </v-data-table>
   </v-card>
   <v-data-table
   item-key="name"
@@ -26,13 +38,6 @@
     v-if="!data"
     >
   </v-data-table>
-  <v-btn
-  elevation="2"
-  large
-  outlined
-  style="margin:10px"
-  @click="viewGraph()"
-  >View search graph</v-btn>
 </v-container>
 </template>
 
@@ -55,9 +60,7 @@ export default {
           const countries = response.data.data
           for (let i = 0; i < countries.length; i++){
             let state = {}
-            state.country = countries[i].name
-            state.pos = countries[i].latest_data.confirmed
-            state.death = countries[i].latest_data.deaths
+            state = countries[i]
             states.push(state)
           }
         })
@@ -74,42 +77,49 @@ export default {
           const countries = response.data.data
           for (let i = 0; i < countries.length; i++){
             let state = {}
-            state.country = countries[i].name
-            state.pos = countries[i].latest_data.confirmed
-            state.death = countries[i].latest_data.deaths
+            state = countries[i]
             states.push(state)
           }
         })
-      let country = states.find(el => el.country === search);
+      let country = states.find(el => el.name === search);
       console.log(country)
       if (country != null) {
         this.estados = [country]
+        let cntry = {
+          name: country.name,
+          pos: country.latest_data.confirmed,
+          death: country.latest_data.deaths
+        }
+        this.data = true
          await this.axios
-        .post("http://127.0.0.1:5000/covidlogs/add_log", country)
+        .post("http://localhost:8080/https://git.heroku.com/backsemanatec.git/covidlogs/add_log/", cntry)
         console.log("Log saved")
       } else {
         this.estados = states
+        this.data = true
       }
-      this.data = true
     },
-    viewGraph(){
-        this.$router.push('/covid/search');
-    },
+    rowClicked(row) {
+      console.log(row);
+      this.$router.push({name: 'Country', params: {code: row.code, country: row }});
+    }
   },
 
   data: () => ({
     search: "",
+    selectedRow: [],
     headers: [{
-            text: 'Pais',
+            text: 'Country',
             align: 'start',
             filterable: true,
             value: 'country',
           },
-          { text: 'Positivos', value: 'pos' },
-          { text: 'Muertes', value: 'death' }],
+          { text: 'Confirmed', value: 'pos' },
+          { text: 'Deaths', value: 'death' }],
     estados: [
       {
         country: "Mexico",
+        code: "MX",
         pos: 1999,
         death: 2000
       }

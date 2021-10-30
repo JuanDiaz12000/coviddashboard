@@ -25,17 +25,29 @@
           width="250"
         />
       </div>
+      
 
       <v-spacer></v-spacer>
-      <!-- Comment 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn> -->
+      <div class="d-flex align-center">
+        <v-btn
+          elevation="2"
+          color="secondary"
+          style="margin-left: 10px; margin-right: 10px"
+          href="#/covicho"
+        >Map</v-btn>
+        <v-btn
+          elevation="2"
+          color="secondary"
+          style="margin-left: 10px; margin-right: 10px"
+          href="#/covid"
+        >Table</v-btn>
+        <v-btn
+          elevation="2"
+          color="secondary"
+          style="margin-left: 10px; margin-right: 10px"
+          href="#/covid/search"
+        >Graph</v-btn>
+      </div>
     </v-app-bar>
 
     <v-main>
@@ -50,7 +62,15 @@ export default {
   name: 'App',
 
   data: () => ({
-    //
+    hover1: false,
+    hover2: false,
+    hover3: false,
   }),
 };
 </script>
+
+<style>
+    .btn1-hover {
+      color: primary;
+    }
+</style>
