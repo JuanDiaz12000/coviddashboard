@@ -33,14 +33,8 @@
           elevation="2"
           color="secondary"
           style="margin-left: 10px; margin-right: 10px"
-          href="#/covicho"
-        >Map</v-btn>
-        <v-btn
-          elevation="2"
-          color="secondary"
-          style="margin-left: 10px; margin-right: 10px"
           href="#/covid"
-        >Table</v-btn>
+        >US Map & WorldWideTable</v-btn>
         <v-btn
           elevation="2"
           color="secondary"
